@@ -1,0 +1,20 @@
+.Mui-selected {
+  color: #f2672e;
+}
+.MuiPopover-paper {
+  background: linear-gradient(
+    106.51deg,
+    rgba(255, 255, 255, 0.05) 3.44%,
+    rgba(255, 255, 255, 0.02) 64.82%
+  );
+  backdrop-filter: blur(30px);
+  border: 2px solid white;
+  border-radius: 24px;
+  border-image-source: linear-gradient(
+    106.69deg,
+    rgba(255, 255, 255, 0.25) 4.31%,
+    rgba(255, 255, 255, 0) 45.94%,
+    rgba(21, 28, 46, 0) 64.91%,
+    rgba(21, 28, 46, 0.25) 100%
+  );
+}
