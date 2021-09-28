@@ -7,6 +7,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import arrow from "../Assets/arrow-right.svg";
 import Dima from "../Assets/background_images/Dima.png";
 
+import GitHubIcon from "@material-ui/icons/GitHub";
+
 const useStyles = makeStyles((theme) => ({
   margin: {
     marginTop: 40,
@@ -79,7 +81,7 @@ const About = ({ matches }) => {
           align="left"
           className={classes.text}
         >
-          Hey! I am Dmitry kostenko.
+          Hey! I am Dmitry Kostenko.
         </Typography>
         <div style={{ display: "flex", flexWrap: "wrap" }}>
           <span
@@ -100,6 +102,7 @@ const About = ({ matches }) => {
           consideration the latest trends and technologies.
         </Typography>
         <Link
+        underline="none"
           rel="stylesheet"
           href="https://github.com/dmitrykostenkoweb"
           target="_blank"
@@ -109,7 +112,8 @@ const About = ({ matches }) => {
             color="primary"
             variant="contained"
           >
-            Portfolio <img src={arrow} alt="arrow" />
+            My GitHub <GitHubIcon style={{ margin: "0 10px " }} />
+            <img src={arrow} alt="arrow" />
           </Button>
         </Link>
       </Grid>

@@ -32,7 +32,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const MyAppBar = ({ setValue, value, setDarkMode, darkMode, matches }) => {
+const MyAppBar = ({
+  setValue,
+  value,
+  setDarkMode,
+  darkMode,
+  matches,
+  trans,
+  friendsToggle,
+  setFriendsToggle,
+}) => {
   const classes = useStyles();
 
   /// Burger
@@ -91,7 +100,10 @@ const MyAppBar = ({ setValue, value, setDarkMode, darkMode, matches }) => {
   const appBarContent = () => {
     return (
       <Grid className={classes.container} container>
-        <LetsBeFriends />
+        <LetsBeFriends
+          friendsToggle={friendsToggle}
+          setFriendsToggle={setFriendsToggle}
+        />
         <Nav darkMode={darkMode} value={value} setValue={setValue} />
         <Theme darkMode={darkMode} setDarkMode={setDarkMode} />
       </Grid>

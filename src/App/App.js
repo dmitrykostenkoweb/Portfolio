@@ -71,7 +71,7 @@ const App = () => {
       img: toDo,
       title: "ToDo App",
       description:
-        "Handy application for tasks and sort them by folders.The application has the ability to create folders with tasks and set a color for them. All data is written to the json-server.",
+        "Handy application for tasks and sorting them by folders.The application has the ability to create folders with tasks and set a color for them. All data is written to the json-server.",
       technologies: [
         { title: "React", icon: logoReact, id: 1 },
         { title: "json-server", icon: logoJson, id: 2 },
@@ -110,6 +110,7 @@ const App = () => {
         <Container>
           <Grid container>
             <Content
+            theme={theme}
               matches={matches}
               setDarkMode={setDarkMode}
               darkMode={darkMode}

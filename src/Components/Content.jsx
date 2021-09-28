@@ -5,22 +5,22 @@ import About from "./About";
 import Parallax from "./Parallax";
 import Portfolio from "./Portfolio";
 
-import { Paper } from "@material-ui/core/";
+import { Paper, useMediaQuery } from "@material-ui/core/";
 import { makeStyles } from "@material-ui/core/styles";
 
 import { useSpring, animated } from "react-spring";
 
 const calc = (x, y) => [
-  -(y - window.innerHeight / 2) / 50,
-  (x - window.innerWidth / 2) / 50,
-  1.1,
+  -(y - window.innerHeight / 10) / 400,
+  (x - window.innerWidth / 10) / 400,
+  1,
 ];
 const trans = (x, y, s) =>
   `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 
 const useStyles = makeStyles((theme) => ({
   wrapper: {
-    minHeight: 650,
+    // minHeight: 450,
     margin: "10vh 0",
     // overflow: "hidden",
   },
@@ -39,11 +39,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Content = ({ projectsData, setDarkMode, darkMode, matches }) => {
+const Content = ({ projectsData, setDarkMode, darkMode, matches, theme }) => {
   const classes = useStyles();
   const [navValue, setNavValue] = useState(0);
   const [portfolioNavValue, setPortfolioNavValue] = useState(0);
+  const [friendsToggle, setFriendsToggle] = useState(null);
+  const booleanTransform = Boolean(friendsToggle);
 
+  const matchesParallax = useMediaQuery(theme.breakpoints.up("md"));
+
+  console.log(booleanTransform);
   const [props, set] = useSpring(() => ({
     xys: [0, 0, 1],
     config: { mass: 5, tension: 350, friction: 40 },
@@ -56,7 +61,11 @@ const Content = ({ projectsData, setDarkMode, darkMode, matches }) => {
     <animated.div
       onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
       onMouseLeave={() => set({ xys: [0, 0, 1] })}
-      style={{ transform: props.xys.interpolate(trans) }}
+      style={
+        booleanTransform
+          ? { transform: "none" }
+          : { transform: props.xys.interpolate(trans) }
+      }
       className={classes.wrapper}
     >
       <Paper
@@ -67,14 +76,17 @@ const Content = ({ projectsData, setDarkMode, darkMode, matches }) => {
         }
         className={classes.paper}
       >
-        <Parallax />
+        {matchesParallax && <Parallax />}
 
         <AppBar
+          trans={trans}
           matches={matches}
           setDarkMode={setDarkMode}
           darkMode={darkMode}
           value={navValue}
           setValue={setNavValue}
+          friendsToggle={friendsToggle}
+          setFriendsToggle={setFriendsToggle}
         />
         {!navValue ? (
           <About matches={matches} />

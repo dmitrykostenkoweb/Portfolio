@@ -15,7 +15,6 @@ import css from "../Assets/background_images/css.png";
 import gear from "../Assets/background_images/gear.png";
 import html from "../Assets/background_images/html.png";
 import mail from "../Assets/background_images/mail.png";
-import page from "../Assets/background_images/page.png";
 import rocket from "../Assets/background_images/rocket.png";
 
 const useStyles = makeStyles((theme) => ({
@@ -24,164 +23,31 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     height: "100vh",
     opacity: 0.9,
-    filter:' drop-shadow(16px 16px 20px black) ',
-
   },
 
   cube: {
     position: "absolute",
-    top: "-5%",
-    left: "-5%",
+    top: "12%",
+    left: "-10%",
     backgroundSize: "cover",
     backgroundRepeat: " no-repeat",
     willChange: "transform",
-    width: '3vw',
-    height: '3vw',
+    width: "3vw",
+    height: "3vw",
     backgroundImage: `url(${cube})`,
-
+    filter: " drop-shadow(16px 16px 20px black) ",
   },
   donatPurple: {
     position: "absolute",
-    bottom: "30%",
+    top: "15%",
     left: "-10%",
     backgroundSize: "contain",
     backgroundRepeat: " no-repeat",
     willChange: "transform",
-    width: '5vw',
-    height: '5vw',
+    width: "5vw",
+    height: "5vw",
     backgroundImage: `url(${donatPurple})`,
-  },
-  pill: {
-    position: "absolute",
-    bottom: "30%",
-    right: "-5%",
-    backgroundSize: "contain",
-    backgroundRepeat: " no-repeat",
-    willChange: "transform",
-    width: '10vw',
-    height: '10vw',
-    backgroundImage: `url(${pill})`,
-  },
-  sphere: {
-    position: "absolute",
-    top: -30,
-    right:0,
-    backgroundSize: "cover",
-    backgroundRepeat: " no-repeat",
-    willChange: "transform",
-    width: '3vw',
-    height: '3vw',
-    backgroundImage: `url(${sphere})`,
-  },
-  code: {
-    position: "absolute",
-    top: '5%',
-    right: 0,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: " no-repeat",
-    willChange: "transform",
-    width: '5vw',
-    height: '3vw',
-    backgroundImage: `url(${code})`,
-  },
-  headphones: {
-    position: "absolute",
-    bottom: '10%',
-    left: "-5%",
-    backgroundSize: "contain",
-    backgroundPosition: "center",
-    backgroundRepeat: " no-repeat",
-    willChange: "transform",
-    width: '3vw',
-    height: '3vw',
-    backgroundImage: `url(${headphones})`,
-  },
-  pokeball: {
-    position: "absolute",
-    top: "10%",
-    right: "10%",
-    backgroundSize: "contain",
-    backgroundPosition: "center",
-    backgroundRepeat: " no-repeat",
-    willChange: "transform",
-    width: '3vw',
-    height: '3vw',
-    backgroundImage: `url(${pokeball})`,
-  },
-  code2: {
-    position: "absolute",
-    bottom: "40%",
-    left: "-10%",
-    backgroundSize: "cover",
-    backgroundRepeat: " no-repeat",
-    willChange: "transform",
-
-    width: '5vw',
-    height: '3vw',
-
-    backgroundImage: `url(${code2})`,
-  },
-  css: {
-    position: "absolute",
-    bottom: "20%",
-    left: "-10%",
-    backgroundSize: "contain",
-    backgroundRepeat: " no-repeat",
-    willChange: "transform",
-    width: '3vw',
-    height: '3vw',
-    backgroundImage: `url(${css})`,
-  },
-  gear: {
-    position: "absolute",
-    top: "30%",
-    right: 0,
-    backgroundSize: "contain",
-    backgroundRepeat: " no-repeat",
-    willChange: "transform",
-    width: '5vw',
-    height: '5vw',
-    backgroundImage: `url(${gear})`,
-  },
-  html: {
-    position: "absolute",
-    bottom: "30%",
-    left: "-5%",
-    backgroundSize: "cover",
-    backgroundRepeat: " no-repeat",
-    willChange: "transform",
-    width: '5vw',
-    height: '3vw',
-    backgroundImage: `url(${html})`,
-  },
-  mail: {
-    position: "absolute",
-    top: "25%",
-    right: "5%",
-    zIndex: 10,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: " no-repeat",
-    willChange: "transform",
-
-    width: '5vw',
-    height: '3vw',
-
-    backgroundImage: `url(${mail})`,
-  },
-  page: {
-    position: "absolute",
-    top: "30%",
-    left: "-10%",
-    zIndex: 100,
-    backgroundSize: "contain",
-    backgroundPosition: "center",
-    backgroundRepeat: " no-repeat",
-    willChange: "transform",
-    width: '5vw',
-    height: '5vw',
-    backgroundImage: `url(${page})`,
+    filter: " drop-shadow(16px 16px 20px black) ",
   },
   rocket: {
     position: "absolute",
@@ -192,17 +58,150 @@ const useStyles = makeStyles((theme) => ({
     backgroundPosition: "center",
     backgroundRepeat: " no-repeat",
     willChange: "transform",
-    width: '10vw',
-    height: '10vw',
+    width: "5vw",
+    height: "5vw",
     backgroundImage: `url(${rocket})`,
+    filter: " drop-shadow(10px 10px 10px black) ",
+  },
+
+  code: {
+    position: "absolute",
+    bottom: "40%",
+    left: "-8%",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: " no-repeat",
+    willChange: "transform",
+    width: "3vw",
+    height: "2vw",
+    backgroundImage: `url(${code})`,
+    filter: " drop-shadow(16px 16px 20px black) ",
+  },
+  code2: {
+    position: "absolute",
+    bottom: "40%",
+    left: "-10%",
+    backgroundSize: "cover",
+    backgroundRepeat: " no-repeat",
+    willChange: "transform",
+
+    width: "3vw",
+    height: "2vw",
+
+    backgroundImage: `url(${code2})`,
+    filter: " drop-shadow(16px 16px 20px black) ",
+  },
+  mail: {
+    position: "absolute",
+    bottom: "45%",
+    left: "-5%",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: " no-repeat",
+    willChange: "transform",
+    width: "2vw",
+    height: "2vw",
+
+    backgroundImage: `url(${mail})`,
+    filter: " drop-shadow(16px 16px 20px black) ",
+  },
+  css: {
+    position: "absolute",
+    bottom: "40%",
+    left: "-8%",
+    backgroundSize: "contain",
+    backgroundRepeat: " no-repeat",
+    willChange: "transform",
+    width: "3vw",
+    height: "3vw",
+    backgroundImage: `url(${css})`,
+    filter: " drop-shadow(16px 16px 20px black) ",
+  },
+
+  html: {
+    position: "absolute",
+    bottom: "40%",
+    left: "-5%",
+    backgroundSize: "cover",
+    backgroundRepeat: " no-repeat",
+    willChange: "transform",
+    width: "3vw",
+    height: "2vw",
+    backgroundImage: `url(${html})`,
+    filter: " drop-shadow(16px 16px 20px black) ",
+  },
+
+  sphere: {
+    position: "absolute",
+    top: -30,
+    right: 0,
+    backgroundSize: "cover",
+    backgroundRepeat: " no-repeat",
+    willChange: "transform",
+    width: "3vw",
+    height: "3vw",
+    backgroundImage: `url(${sphere})`,
+    filter: " drop-shadow(16px 16px 20px black) ",
+  },
+  pokeball: {
+    position: "absolute",
+    top: -30,
+    right: 0,
+    backgroundSize: "contain",
+    backgroundPosition: "center",
+    backgroundRepeat: " no-repeat",
+    willChange: "transform",
+    width: "5vw",
+    height: "5vw",
+    backgroundImage: `url(${pokeball})`,
+    filter: " drop-shadow(16px 16px 20px black) ",
+  },
+  pill: {
+    position: "absolute",
+    bottom: "40%",
+    right: "-5%",
+    backgroundSize: "contain",
+    backgroundRepeat: " no-repeat",
+    willChange: "transform",
+    width: "10vw",
+    height: "10vw",
+    backgroundImage: `url(${pill})`,
+    filter: " drop-shadow(16px 16px 20px black) ",
+  },
+  gear: {
+    position: "absolute",
+    bottom: "40%",
+    right: 0,
+    backgroundSize: "contain",
+    backgroundRepeat: " no-repeat",
+    willChange: "transform",
+    width: "5vw",
+    height: "5vw",
+    backgroundImage: `url(${gear})`,
+    filter: " drop-shadow(16px 16px 20px black) ",
+  },
+
+  headphones: {
+    position: "absolute",
+    top: "40%",
+    right: 0,
+    backgroundSize: "contain",
+    backgroundPosition: "center",
+    backgroundRepeat: " no-repeat",
+    willChange: "transform",
+    width: "5vw",
+    height: "5vw",
+    backgroundImage: `url(${headphones})`,
+    filter: " drop-shadow(16px 16px 20px black) ",
   },
 }));
 
 const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
 const trans1 = (x, y) => `translate3d(${x / 20}px,${y / 20}px,0)`;
-const trans2 = (x, y) => `translate3d(${x / 8 + 35}px,${y / 8 - 230}px,0)`;
-const trans3 = (x, y) => `translate3d(${x / 30}px,${y / 30}px,0)`;
-const trans4 = (x, y) => `translate3d(${x / 50}px,${y / 50}px,0)`;
+const trans2 = (x, y) => `translate3d(${x / 30}px,${y / 30}px,0)`;
+const trans3 = (x, y) => `translate3d(${x / 35}px,${y / 35}px,0)`;
+const trans4 = (x, y) => `translate3d(${x / 40}px,${y / 40}px,0)`;
+const trans5 = (x, y) => `translate3d(${x / 45}px,${y / 45}px,0)`;
 
 const Parallax = () => {
   const classes = useStyles();
@@ -228,27 +227,19 @@ const Parallax = () => {
           style={{ transform: props.xy.interpolate(trans2) }}
         />
         <animated.div
-          className={classes.pill}
-          style={{ transform: props.xy.interpolate(trans3) }}
+          className={classes.rocket}
+          style={{ transform: props.xy.interpolate(trans5) }}
         />
         <animated.div
           className={classes.sphere}
-          style={{ transform: props.xy.interpolate(trans4) }}
-        />
-        <animated.div
-          className={classes.code}
-          style={{ transform: props.xy.interpolate(trans1) }}
-        />
-        <animated.div
-          className={classes.headphones}
           style={{ transform: props.xy.interpolate(trans2) }}
         />
         <animated.div
           className={classes.pokeball}
-          style={{ transform: props.xy.interpolate(trans3) }}
+          style={{ transform: props.xy.interpolate(trans5) }}
         />
         <animated.div
-          className={classes.code2}
+          className={classes.code}
           style={{ transform: props.xy.interpolate(trans1) }}
         />
         <animated.div
@@ -256,7 +247,7 @@ const Parallax = () => {
           style={{ transform: props.xy.interpolate(trans2) }}
         />
         <animated.div
-          className={classes.gear}
+          className={classes.code2}
           style={{ transform: props.xy.interpolate(trans3) }}
         />
         <animated.div
@@ -265,16 +256,24 @@ const Parallax = () => {
         />
         <animated.div
           className={classes.mail}
+          style={{ transform: props.xy.interpolate(trans5) }}
+        />{" "}
+        <animated.div
+          className={classes.pill}
           style={{ transform: props.xy.interpolate(trans1) }}
         />
         <animated.div
-          className={classes.page}
-          style={{ transform: props.xy.interpolate(trans2) }}
-        />
-        <animated.div
-          className={classes.rocket}
+          className={classes.headphones}
           style={{ transform: props.xy.interpolate(trans3) }}
         />
+        <animated.div
+          className={classes.gear}
+          style={{ transform: props.xy.interpolate(trans5) }}
+        />
+        {/* <animated.div
+          className={classes.page}
+          style={{ transform: props.xy.interpolate(trans2) }}
+        /> */}
       </div>
     </div>
   );

@@ -48,7 +48,6 @@ const Portfolio = ({
     return () => window.removeEventListener("scroll", handelScroll);
   }, []);
 
-  let coefficient = 0.6;
 
   const navigation = projectsData.map((item) => {
     const { title, id } = item;
@@ -236,7 +235,7 @@ const Portfolio = ({
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            transform: `translateY(${offsetY * 0.3}px)`,
+            transform: `translateY(${offsetY * 0.1}px)`,
           }}
           xs={12}
           sm={12}
