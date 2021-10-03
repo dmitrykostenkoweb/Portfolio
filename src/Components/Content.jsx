@@ -7,7 +7,7 @@ import AppBar from "./AppBar/AppBar";
 import About from "./About";
 import Parallax from "./Parallax";
 import Portfolio from "./Portfolio";
-import Contact from "./Contact/Contact";
+import Contact from "./Contact";
 
 import { Paper, useMediaQuery } from "@material-ui/core/";
 import { makeStyles } from "@material-ui/core/styles";
