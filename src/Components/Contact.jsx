@@ -7,7 +7,7 @@ import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
 
-import Gmail from "../../Assets/background_images/Gmail.png";
+import Gmail from "../Assets/background_images/Gmail.png";
 
 const Contact = ({ darkMode, matches }) => {
   const useStyles = makeStyles((theme) => ({
