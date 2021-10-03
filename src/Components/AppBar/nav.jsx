@@ -1,56 +1,69 @@
 import React from "react";
-import {
-  Grid,
-  BottomNavigation,
-  BottomNavigationAction,
-} from "@material-ui/core";
+
+import { NavLink as RouterLink } from "react-router-dom";
+
+import { Grid, Link } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
-  flex: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
   nav: {
     display: "flex",
     justifyContent: "space-around",
     gap: 40,
     alignItems: "center",
+    zIndex: 100,
   },
 }));
 
 const Nav = ({ darkMode, value, setValue, matches }) => {
   const classes = useStyles();
 
-  const linksData = [
-    { label: "About", href: "#about", id: 1 },
-    { label: "Portfolio", href: "#contact", id: 2 },
-  ];
-  const links = linksData.map((link) => {
-    const { label, id } = link;
-
-    return (
-      <BottomNavigationAction
-        style={darkMode ? { color: "#fff" } : { color: "#000" }}
-        label={label}
-        key={id}
-      />
-    );
-  });
-
   return (
-    <Grid className={classes.flex} item xs={8}>
-      <BottomNavigation
-        className={classes.nav}
-        showLabels
-        value={value}
-        onChange={(event, newValue) => {
-          setValue(newValue);
+    <Grid className={classes.nav} item xs={8}>
+      <Link
+        style={darkMode ? { color: "#fff" } : { color: "#000" }}
+        component={RouterLink}
+        exact
+        to="/"
+        underline="none"
+        activeStyle={{
+          fontWeight: "bold",
+          background: "linear-gradient(90deg, #8B5CF6 0%, #EC4899 43.9%)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
         }}
       >
-        {links}
-      </BottomNavigation>
+        About
+      </Link>
+      <Link
+        style={darkMode ? { color: "#fff" } : { color: "#000" }}
+        component={RouterLink}
+        exact
+        to="/portfolio"
+        underline="none"
+        activeStyle={{
+          fontWeight: "bold",
+          background: "linear-gradient(90deg, #F59E0B 39.95%, #EF4444 77.15%)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+        }}
+      >
+        Portfolio
+      </Link>
+      <Link
+        style={darkMode ? { color: "#fff" } : { color: "#000" }}
+        component={RouterLink}
+        to="/contact"
+        underline="none"
+        activeStyle={{
+          fontWeight: "bold",
+          background: "linear-gradient(90deg, #8B5CF6 0%, #EC4899 43.9%)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+        }}
+      >
+        Contact
+      </Link>
     </Grid>
   );
 };

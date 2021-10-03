@@ -38,7 +38,6 @@ const MyAppBar = ({
   setDarkMode,
   darkMode,
   matches,
-  trans,
   friendsToggle,
   setFriendsToggle,
 }) => {

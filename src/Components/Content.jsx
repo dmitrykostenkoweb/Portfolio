@@ -1,9 +1,13 @@
 import React, { useState } from "react";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import AppBar from "./AppBar/AppBar";
 import About from "./About";
 import Parallax from "./Parallax";
 import Portfolio from "./Portfolio";
+import Contact from "./Contact/Contact";
 
 import { Paper, useMediaQuery } from "@material-ui/core/";
 import { makeStyles } from "@material-ui/core/styles";
@@ -20,9 +24,8 @@ const trans = (x, y, s) =>
 
 const useStyles = makeStyles((theme) => ({
   wrapper: {
-    // minHeight: 450,
     margin: "10vh 0",
-    // overflow: "hidden",
+    width: "100%",
   },
   paper: {
     position: "relative",
@@ -48,7 +51,7 @@ const Content = ({ projectsData, setDarkMode, darkMode, matches, theme }) => {
 
   const matchesParallax = useMediaQuery(theme.breakpoints.up("md"));
 
-  console.log(booleanTransform);
+  // console.log(booleanTransform);
   const [props, set] = useSpring(() => ({
     xys: [0, 0, 1],
     config: { mass: 5, tension: 350, friction: 40 },
@@ -57,51 +60,73 @@ const Content = ({ projectsData, setDarkMode, darkMode, matches, theme }) => {
   const itemProject = projectsData.filter((item) => {
     return item.id === portfolioNavValue;
   });
-  return (
-    <animated.div
-      onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
-      onMouseLeave={() => set({ xys: [0, 0, 1] })}
-      style={
-        booleanTransform
-          ? { transform: "none" }
-          : { transform: props.xys.interpolate(trans) }
-      }
-      className={classes.wrapper}
-    >
-      <Paper
-        style={
-          !darkMode
-            ? { border: "solid 1px rgba(0, 0, 0, 0.12)" }
-            : { border: "" }
-        }
-        className={classes.paper}
-      >
-        {matchesParallax && <Parallax />}
 
-        <AppBar
-          trans={trans}
-          matches={matches}
-          setDarkMode={setDarkMode}
-          darkMode={darkMode}
-          value={navValue}
-          setValue={setNavValue}
-          friendsToggle={friendsToggle}
-          setFriendsToggle={setFriendsToggle}
-        />
-        {!navValue ? (
-          <About matches={matches} />
-        ) : (
-          <Portfolio
-            value={portfolioNavValue}
-            setValue={setPortfolioNavValue}
-            itemProject={itemProject}
-            projectsData={projectsData}
-            darkMode={darkMode}
+  return (
+    <Router>
+      <animated.div
+        onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
+        onMouseLeave={() => set({ xys: [0, 0, 1] })}
+        style={
+          booleanTransform
+            ? { transform: "none" }
+            : { transform: props.xys.interpolate(trans) }
+        }
+        className={classes.wrapper}
+      >
+        <Paper
+          style={
+            !darkMode
+              ? { border: "solid 1px rgba(0, 0, 0, 0.12)" }
+              : { border: "" }
+          }
+          className={classes.paper}
+        >
+          {matchesParallax && <Parallax />}
+          <AppBar
             matches={matches}
+            setDarkMode={setDarkMode}
+            darkMode={darkMode}
+            value={navValue}
+            setValue={setNavValue}
+            friendsToggle={friendsToggle}
+            setFriendsToggle={setFriendsToggle}
           />
-        )}
-      </Paper>
-    </animated.div>
+          <Route
+            render={({ location }) => (
+              <TransitionGroup>
+                <CSSTransition
+                  key={location.key}
+                  timeout={300}
+                  classNames="fade"
+                >
+                  <Switch location={location}>
+                    <Route exact path="/">
+                      <About matches={matches} />
+                    </Route>
+                    <Route path="/portfolio">
+                      <Portfolio
+                        value={portfolioNavValue}
+                        setValue={setPortfolioNavValue}
+                        itemProject={itemProject}
+                        projectsData={projectsData}
+                        darkMode={darkMode}
+                        matches={matches}
+                      />
+                    </Route>
+                    <Route path="/contact">
+                      <Contact matches={matches} darkMode={darkMode} />
+                    </Route>
+                    <Route path="*">
+                      <div>NotFound</div>
+                    </Route>
+                  </Switch>
+                </CSSTransition>
+              </TransitionGroup>
+            )}
+          />
+        </Paper>
+      </animated.div>
+    </Router>
   );
 };
 

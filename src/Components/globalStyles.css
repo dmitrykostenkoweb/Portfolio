@@ -18,3 +18,41 @@
     rgba(21, 28, 46, 0.25) 100%
   );
 }
+.MuiLink-root {
+  transition: 0.5s;
+}
+.MuiLink-root:hover {
+  color: #f2672e !important;
+}
+.MuiLink-root:active {
+  color: #f2672e !important;
+}
+.page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  
+}
+.fade-appear,
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+.fade-appear-active,
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms linear 150ms;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms linear;
+}
+.MuiLink-root{
+  z-index: 1000;
+}

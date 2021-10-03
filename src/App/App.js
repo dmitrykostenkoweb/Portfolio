@@ -32,12 +32,13 @@ const App = () => {
   const theme = createTheme({
     palette: {
       // mode: "light",
+      common: !darkMode ? "#fff" : "#000",
+
       primary: {
         main: "#F2672E",
       },
       text: {
         primary: darkMode ? "#fff" : "#000",
-
       },
       background: {
         paper:
@@ -46,7 +47,6 @@ const App = () => {
     },
     typography: {
       fontFamily: " 'Poppins', sans-serif;",
-
     },
   });
 
@@ -110,7 +110,7 @@ const App = () => {
         <Container>
           <Grid container>
             <Content
-            theme={theme}
+              theme={theme}
               matches={matches}
               setDarkMode={setDarkMode}
               darkMode={darkMode}
