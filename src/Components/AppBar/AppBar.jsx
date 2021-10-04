@@ -40,7 +40,7 @@ const MyAppBar = ({
   matches,
   friendsToggle,
   setFriendsToggle,
-}) => {
+  }) => {
   const classes = useStyles();
 
   /// Burger
@@ -59,7 +59,6 @@ const MyAppBar = ({
     return (
       <Grid
         className={classes.container}
-        style={{ flexDirection: "column" }}
         container
       >
         <Box className={classes.menuItems} sx={{ p: 2 }}>
@@ -103,7 +102,12 @@ const MyAppBar = ({
           friendsToggle={friendsToggle}
           setFriendsToggle={setFriendsToggle}
         />
-        <Nav darkMode={darkMode} value={value} setValue={setValue} />
+        <Nav
+          matches={matches}
+          darkMode={darkMode}
+          value={value}
+          setValue={setValue}
+        />
         <Theme darkMode={darkMode} setDarkMode={setDarkMode} />
       </Grid>
     );

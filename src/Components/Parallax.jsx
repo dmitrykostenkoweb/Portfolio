@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   cube: {
     position: "absolute",
     top: "12%",
-    left: "-10%",
+    left: "-5%",
     backgroundSize: "cover",
     backgroundRepeat: " no-repeat",
     willChange: "transform",
@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
   donatPurple: {
     position: "absolute",
     top: "15%",
-    left: "-10%",
+    left: "-5%",
     backgroundSize: "contain",
     backgroundRepeat: " no-repeat",
     willChange: "transform",
@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
   rocket: {
     position: "absolute",
     top: "15%",
-    left: "-10%",
+    left: "-5%",
     zIndex: 100,
     backgroundSize: "contain",
     backgroundPosition: "center",

@@ -9,7 +9,15 @@ import Parallax from "./Parallax";
 import Portfolio from "./Portfolio";
 import Contact from "./Contact";
 
-import { Paper, useMediaQuery } from "@material-ui/core/";
+import {
+  Paper,
+  useMediaQuery,
+  Snackbar,
+  IconButton,
+  Button,
+} from "@material-ui/core/";
+import CloseIcon from "@mui/icons-material/Close";
+
 import { makeStyles } from "@material-ui/core/styles";
 
 import { useSpring, animated } from "react-spring";
@@ -23,10 +31,6 @@ const trans = (x, y, s) =>
   `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 
 const useStyles = makeStyles((theme) => ({
-  wrapper: {
-    margin: "10vh 0",
-    width: "100%",
-  },
   paper: {
     position: "relative",
     padding: theme.spacing(2),
@@ -47,9 +51,11 @@ const Content = ({ projectsData, setDarkMode, darkMode, matches, theme }) => {
   const [navValue, setNavValue] = useState(0);
   const [portfolioNavValue, setPortfolioNavValue] = useState(0);
   const [friendsToggle, setFriendsToggle] = useState(null);
+  const [openSnackBar, setOpenSnackBar] = useState(false);
+
   const booleanTransform = Boolean(friendsToggle);
 
-  const matchesParallax = useMediaQuery(theme.breakpoints.up("md"));
+  const matchesMD = useMediaQuery(theme.breakpoints.up("md"));
 
   // console.log(booleanTransform);
   const [props, set] = useSpring(() => ({
@@ -61,27 +67,49 @@ const Content = ({ projectsData, setDarkMode, darkMode, matches, theme }) => {
     return item.id === portfolioNavValue;
   });
 
+  const handleCloseSnackBar = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpenSnackBar(false);
+  };
+
+  const action = (
+    <React.Fragment>
+      <Button color="secondary" size="small" onClick={handleCloseSnackBar}>
+        UNDO
+      </Button>
+      <IconButton
+        size="small"
+        aria-label="close"
+        color="inherit"
+        onClick={handleCloseSnackBar}
+      >
+        <CloseIcon fontSize="small" />
+      </IconButton>
+    </React.Fragment>
+  );
+
   return (
     <Router>
       <animated.div
+        className={classes.wrapper}
         onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
         onMouseLeave={() => set({ xys: [0, 0, 1] })}
-        style={
-          booleanTransform
-            ? { transform: "none" }
-            : { transform: props.xys.interpolate(trans) }
-        }
-        className={classes.wrapper}
+        style={{
+          transform: booleanTransform ? "none" : props.xys.interpolate(trans),
+          width: matches ? "80vw" : "90vw",
+          margin: "10vh auto ",
+        }}
       >
         <Paper
-          style={
-            !darkMode
-              ? { border: "solid 1px rgba(0, 0, 0, 0.12)" }
-              : { border: "" }
-          }
+          style={{
+            border: !darkMode ? "solid 1px rgba(0, 0, 0, 0.12)" : "",
+            padding: !matches ? 5 : "",
+          }}
           className={classes.paper}
         >
-          {matchesParallax && <Parallax />}
+          {matchesMD && <Parallax />}
           <AppBar
             matches={matches}
             setDarkMode={setDarkMode}
@@ -114,7 +142,12 @@ const Content = ({ projectsData, setDarkMode, darkMode, matches, theme }) => {
                       />
                     </Route>
                     <Route path="/contact">
-                      <Contact matches={matches} darkMode={darkMode} />
+                      <Contact
+                        matches={matches}
+                        matchesMD={matchesMD}
+                        darkMode={darkMode}
+                        setOpenSnackBar={setOpenSnackBar}
+                      />
                     </Route>
                     <Route path="*">
                       <div>NotFound</div>
@@ -126,6 +159,18 @@ const Content = ({ projectsData, setDarkMode, darkMode, matches, theme }) => {
           />
         </Paper>
       </animated.div>
+      <Snackbar
+        // style={{ position: "fixed", left: 120, bottom: -70 }}
+        open={openSnackBar}
+        autoHideDuration={6000}
+        onClose={handleCloseSnackBar}
+        message="Sorry, but this part is not ready yet. Please contact me in another way. Thanks!"
+        action={action}
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "left",
+        }}
+      />
     </Router>
   );
 };

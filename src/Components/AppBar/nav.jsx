@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
   nav: {
     display: "flex",
     justifyContent: "space-around",
-    gap: 40,
+    gap: 20,
     alignItems: "center",
     zIndex: 100,
   },
@@ -17,9 +17,18 @@ const useStyles = makeStyles((theme) => ({
 
 const Nav = ({ darkMode, value, setValue, matches }) => {
   const classes = useStyles();
-
+  console.log(matches);
   return (
-    <Grid className={classes.nav} item xs={8}>
+    <Grid
+      className={classes.nav}
+      style={
+        !matches
+          ? { flexDirection: "column", marginTop: 20 }
+          : { flexDirection: "row" }
+      }
+      item
+      xs={8}
+    >
       <Link
         style={darkMode ? { color: "#fff" } : { color: "#000" }}
         component={RouterLink}

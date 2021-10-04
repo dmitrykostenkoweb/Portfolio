@@ -1,6 +1,15 @@
 import React, { useState } from "react";
 
-import { TextField, Grid, Typography, Link, Button } from "@material-ui/core/";
+import {
+  TextField,
+  Grid,
+  Typography,
+  Link,
+  Button,
+  Divider,
+ 
+} from "@material-ui/core/";
+
 import { makeStyles } from "@material-ui/core/styles";
 
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
@@ -9,7 +18,7 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 
 import Gmail from "../Assets/background_images/Gmail.png";
 
-const Contact = ({ darkMode, matches }) => {
+const Contact = ({ darkMode, matches, matchesMD, setOpenSnackBar }) => {
   const useStyles = makeStyles((theme) => ({
     notchedOutline: {
       borderColor: darkMode ? "white " : "black",
@@ -21,18 +30,15 @@ const Contact = ({ darkMode, matches }) => {
       fontWeight: 700,
       fontSize: 36,
     },
-    email: {
-      width: 300,
-    },
-    message: {
-      width: 300,
-      height: 200,
+    divider: {
+      width: "80%",
+      margin: "20px auto",
     },
   }));
 
   const [mailValue, setMailValue] = useState(null);
   const [messageValue, setMessageValue] = useState(null);
-  console.log(messageValue);
+
   // require("dotenv").config();
   // const nodemailer = require("nodemailer");
 
@@ -59,6 +65,8 @@ const Contact = ({ darkMode, matches }) => {
   //////////
   const classes = useStyles();
 
+
+
   return (
     <div style={matches ? { padding: 40 } : { padding: 10 }}>
       <Grid style={{ display: "flex" }} container>
@@ -80,7 +88,6 @@ const Contact = ({ darkMode, matches }) => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            // transform: `translateY(${offsetY * 0.1}px)`,
           }}
           xs={12}
           sm={12}
@@ -91,7 +98,7 @@ const Contact = ({ darkMode, matches }) => {
           <img src={Gmail} style={{ width: "50%" }} alt="img" />
         </Grid>
       </Grid>
-      <Grid style={{ display: "flex" }} container>
+      <Grid style={{ display: "flex", marginTop: 20 }} container>
         <Grid
           style={{
             display: "flex",
@@ -107,8 +114,8 @@ const Contact = ({ darkMode, matches }) => {
         >
           <TextField
             value={mailValue}
-            onChange={(event) => setMailValue(event.target.value)}
-            className={classes.email}
+            // onChange={(event) => setMailValue(event.target.value)}
+            onChange={() => setOpenSnackBar(true)}
             label="your email"
             size="small"
             variant="outlined"
@@ -124,13 +131,14 @@ const Contact = ({ darkMode, matches }) => {
                 notchedOutline: classes.notchedOutline,
               },
             }}
+            style={{ width: "100%", maxWidth: 300 }}
           />
           <TextField
             value={messageValue}
-            onChange={(event) => setMessageValue(event.target.value)}
-            className={classes.message}
+            // onChange={(event) => setMessageValue(event.target.value)}
+            onChange={() => setOpenSnackBar(true)}
             label="message"
-            size="medium"
+            // size="medium"
             multiline="true"
             variant="outlined"
             noValidate
@@ -145,18 +153,24 @@ const Contact = ({ darkMode, matches }) => {
                 notchedOutline: classes.notchedOutline,
               },
             }}
+            style={{ width: "100%", maxWidth: 300, paddingBottom: 0 }}
           />
           <Button
             style={{ maxWidth: 100 }}
             size="small"
             color="primary"
             variant="contained"
-            onClick={() => alert("opss...something wrong")}
+            onClick={() => setOpenSnackBar(true)}
           >
             Send
           </Button>
         </Grid>
-
+        {!matchesMD && (
+          <Divider
+            className={classes.divider}
+            style={darkMode ? { background: "white" } : { background: "black" }}
+          />
+        )}
         <Grid
           style={{
             display: "flex",
@@ -177,6 +191,7 @@ const Contact = ({ darkMode, matches }) => {
               alignItems: "center",
               justifyContent: "center",
               gap: 20,
+              marginTop: 20,
             }}
           >
             <Link
@@ -200,7 +215,7 @@ const Contact = ({ darkMode, matches }) => {
             }}
           >
             <Link
-              href="mailto:dmitrykostenkoweb@gmail.com"
+              href="https://www.linkedin.com/in/dmitry-kostenkoweb/"
               target="_blank"
               underline="none"
             >
@@ -220,7 +235,7 @@ const Contact = ({ darkMode, matches }) => {
             }}
           >
             <Link
-              href="mailto:dmitrykostenkoweb@gmail.com"
+              href="https://github.com/dmitrykostenkoweb"
               target="_blank"
               underline="none"
             >
@@ -233,6 +248,7 @@ const Contact = ({ darkMode, matches }) => {
           {/* //// */}
         </Grid>
       </Grid>
+  
     </div>
   );
 };
