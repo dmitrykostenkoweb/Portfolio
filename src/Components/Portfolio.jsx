@@ -48,7 +48,6 @@ const Portfolio = ({
     return () => window.removeEventListener("scroll", handelScroll);
   }, []);
 
-
   const navigation = projectsData.map((item) => {
     const { title, id } = item;
 
@@ -56,7 +55,7 @@ const Portfolio = ({
       <BottomNavigationAction
         label={title}
         key={id}
-        style={darkMode ? { color: "#fff" } : { color: "#000" }}
+        style={{ color: darkMode ? "#fff" : "#000", fontWeight: 600 }}
       />
     );
   });
@@ -120,6 +119,7 @@ const Portfolio = ({
                 alignItems: "center",
                 justifyContent: "center",
                 order: 0,
+                padding: 20,
               }}
               item
               xs={12}
@@ -127,7 +127,16 @@ const Portfolio = ({
               md={6}
               lg={6}
             >
-              <img className={classes.projectImg} src={img} alt="img" />
+              <Link
+                underline="none"
+                color="inherit"
+                target="_blank"
+                href={herokuLink}
+                rel="noreferrer"
+                style={{ width: "100%", height: "100%" }}
+              >
+                <img className={classes.projectImg} src={img} alt="img" />
+              </Link>
             </Grid>
 
             <Grid

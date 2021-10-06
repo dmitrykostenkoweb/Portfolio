@@ -9,18 +9,17 @@ import Parallax from "./Parallax";
 import Portfolio from "./Portfolio";
 import Contact from "./Contact";
 
-import {
-  Paper,
-  useMediaQuery,
-  Snackbar,
-  IconButton,
-  Button,
-} from "@material-ui/core/";
+import { Paper, useMediaQuery, Snackbar, IconButton } from "@material-ui/core/";
 import CloseIcon from "@mui/icons-material/Close";
 
 import { makeStyles } from "@material-ui/core/styles";
 
 import { useSpring, animated } from "react-spring";
+import MuiAlert from "@mui/material/Alert";
+
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 const calc = (x, y) => [
   -(y - window.innerHeight / 10) / 400,
@@ -52,7 +51,9 @@ const Content = ({ projectsData, setDarkMode, darkMode, matches, theme }) => {
   const [portfolioNavValue, setPortfolioNavValue] = useState(0);
   const [friendsToggle, setFriendsToggle] = useState(null);
   const [openSnackBar, setOpenSnackBar] = useState(false);
-
+  const [snackBarText, setSnackBarText] = useState(false);
+  const [snackBarType, setSnackBarType] = useState('');
+  console.log(snackBarType);
   const booleanTransform = Boolean(friendsToggle);
 
   const matchesMD = useMediaQuery(theme.breakpoints.up("md"));
@@ -76,9 +77,6 @@ const Content = ({ projectsData, setDarkMode, darkMode, matches, theme }) => {
 
   const action = (
     <React.Fragment>
-      <Button color="secondary" size="small" onClick={handleCloseSnackBar}>
-        UNDO
-      </Button>
       <IconButton
         size="small"
         aria-label="close"
@@ -147,6 +145,8 @@ const Content = ({ projectsData, setDarkMode, darkMode, matches, theme }) => {
                         matchesMD={matchesMD}
                         darkMode={darkMode}
                         setOpenSnackBar={setOpenSnackBar}
+                        setSnackBarText={setSnackBarText}
+                        setSnackBarType={setSnackBarType}
                       />
                     </Route>
                     <Route path="*">
@@ -160,17 +160,23 @@ const Content = ({ projectsData, setDarkMode, darkMode, matches, theme }) => {
         </Paper>
       </animated.div>
       <Snackbar
-        // style={{ position: "fixed", left: 120, bottom: -70 }}
         open={openSnackBar}
         autoHideDuration={6000}
         onClose={handleCloseSnackBar}
-        message="Sorry, but this part is not ready yet. Please contact me in another way. Thanks!"
         action={action}
         anchorOrigin={{
           vertical: "bottom",
           horizontal: "left",
         }}
-      />
+      >
+        <Alert
+          onClose={handleCloseSnackBar}
+          severity={snackBarType}
+          sx={{ width: "100%" }}
+        >
+          {snackBarText}
+        </Alert>
+      </Snackbar>
     </Router>
   );
 };

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import emailjs from "emailjs-com";
 
 import {
   TextField,
@@ -7,7 +8,6 @@ import {
   Link,
   Button,
   Divider,
- 
 } from "@material-ui/core/";
 
 import { makeStyles } from "@material-ui/core/styles";
@@ -18,7 +18,14 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 
 import Gmail from "../Assets/background_images/Gmail.png";
 
-const Contact = ({ darkMode, matches, matchesMD, setOpenSnackBar }) => {
+const Contact = ({
+  darkMode,
+  matches,
+  matchesMD,
+  setOpenSnackBar,
+  setSnackBarText,
+  setSnackBarType,
+}) => {
   const useStyles = makeStyles((theme) => ({
     notchedOutline: {
       borderColor: darkMode ? "white " : "black",
@@ -36,36 +43,49 @@ const Contact = ({ darkMode, matches, matchesMD, setOpenSnackBar }) => {
     },
   }));
 
-  const [mailValue, setMailValue] = useState(null);
-  const [messageValue, setMessageValue] = useState(null);
-
-  // require("dotenv").config();
-  // const nodemailer = require("nodemailer");
-
-  // const transporter = nodemailer.createTransport({
-  //   service: "gmail",
-  //   auth: {
-  //     user: process.env.EMAIL,
-  //     pass: process.env.PASSWORD,
-  //   },
-  // });
-
-  // const mailOptions = {
-  //   from: mailValue,
-  //   to: "dmitrykostenkoweb@gmail.com",
-  //   subject: "mail send by nodejs",
-  //   text: messageValue,
-  // };
-  // transporter.sendMail(mailOptions);
-
-  // const send = () => {
-
-  // };
-
-  //////////
   const classes = useStyles();
+  const [inputNameValue, setInputNameValue] = useState("");
+  const [inputEmailValue, setInputEmailValue] = useState("");
+  const [inputMassValue, setInputMassValue] = useState("");
 
+  const form = useRef();
 
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_qgt3esr",
+        "template_gb8va3c",
+        form.current,
+        "user_Rz7a2KDLB1PzB3FzMnGmy"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setOpenSnackBar(true);
+          setSnackBarText(
+            "Message sent. Thanks i will contact you as soon as possible!"
+          );
+          setSnackBarType("success");
+          setInputNameValue("");
+          setInputEmailValue("");
+          setInputMassValue("");
+        },
+        (error) => {
+          console.log(error.text);
+          setOpenSnackBar(true);
+          setSnackBarText(
+            "Sorry, but something is wrong. Please contact me in another way. Thanks"
+          );
+          setSnackBarType("error");
+
+          setInputNameValue("");
+          setInputEmailValue("");
+          setInputMassValue("");
+        }
+      );
+  };
 
   return (
     <div style={matches ? { padding: 40 } : { padding: 10 }}>
@@ -99,71 +119,100 @@ const Contact = ({ darkMode, matches, matchesMD, setOpenSnackBar }) => {
         </Grid>
       </Grid>
       <Grid style={{ display: "flex", marginTop: 20 }} container>
-        <Grid
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "flex-start",
-            gap: 20,
-          }}
-          xs={12}
-          sm={12}
-          md={6}
-          lg={6}
-          item
-        >
-          <TextField
-            value={mailValue}
-            // onChange={(event) => setMailValue(event.target.value)}
-            onChange={() => setOpenSnackBar(true)}
-            label="your email"
-            size="small"
-            variant="outlined"
-            noValidate
-            autoComplete="off"
-            InputLabelProps={{
-              classes: {
-                root: classes.cssLabel,
-              },
+        <Grid xs={12} sm={12} md={6} lg={6} item>
+          <form
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "flex-start",
+              gap: 20,
             }}
-            InputProps={{
-              classes: {
-                notchedOutline: classes.notchedOutline,
-              },
-            }}
-            style={{ width: "100%", maxWidth: 300 }}
-          />
-          <TextField
-            value={messageValue}
-            // onChange={(event) => setMessageValue(event.target.value)}
-            onChange={() => setOpenSnackBar(true)}
-            label="message"
-            // size="medium"
-            multiline="true"
-            variant="outlined"
-            noValidate
-            autoComplete="off"
-            InputLabelProps={{
-              classes: {
-                root: classes.cssLabel,
-              },
-            }}
-            InputProps={{
-              classes: {
-                notchedOutline: classes.notchedOutline,
-              },
-            }}
-            style={{ width: "100%", maxWidth: 300, paddingBottom: 0 }}
-          />
-          <Button
-            style={{ maxWidth: 100 }}
-            size="small"
-            color="primary"
-            variant="contained"
-            onClick={() => setOpenSnackBar(true)}
+            ref={form}
+            onSubmit={sendEmail}
           >
-            Send
-          </Button>
+            <TextField
+              label="your name"
+              value={inputNameValue}
+              onChange={(event) => {
+                setInputNameValue(event.target.value);
+              }}
+              size="small"
+              variant="outlined"
+              noValidate
+              autoComplete="off"
+              InputLabelProps={{
+                classes: {
+                  root: classes.cssLabel,
+                },
+              }}
+              InputProps={{
+                classes: {
+                  notchedOutline: classes.notchedOutline,
+                },
+              }}
+              style={{ width: "100%", maxWidth: 300 }}
+              type="text"
+              name="user_name"
+            />
+            <TextField
+              label="your email"
+              value={inputEmailValue}
+              onChange={(event) => {
+                setInputEmailValue(event.target.value);
+              }}
+              size="small"
+              variant="outlined"
+              noValidate
+              autoComplete="off"
+              InputLabelProps={{
+                classes: {
+                  root: classes.cssLabel,
+                },
+              }}
+              InputProps={{
+                classes: {
+                  notchedOutline: classes.notchedOutline,
+                },
+              }}
+              style={{ width: "100%", maxWidth: 300 }}
+              type="email"
+              name="user_email"
+            />
+            <TextField
+              label="message"
+              value={inputMassValue}
+              onChange={(event) => {
+                setInputMassValue(event.target.value);
+              }}
+              multiline="true"
+              variant="outlined"
+              noValidate
+              autoComplete="off"
+              InputLabelProps={{
+                classes: {
+                  root: classes.cssLabel,
+                },
+              }}
+              InputProps={{
+                classes: {
+                  notchedOutline: classes.notchedOutline,
+                },
+              }}
+              style={{ width: "100%", maxWidth: 300, paddingBottom: 0 }}
+              type="text"
+              name="message"
+            />
+            <Button
+              style={{ maxWidth: 100 }}
+              size="small"
+              color="primary"
+              variant="contained"
+              type="submit"
+              value="Send"
+            >
+              Send
+            </Button>
+          </form>
         </Grid>
         {!matchesMD && (
           <Divider
@@ -248,7 +297,6 @@ const Contact = ({ darkMode, matches, matchesMD, setOpenSnackBar }) => {
           {/* //// */}
         </Grid>
       </Grid>
-  
     </div>
   );
 };

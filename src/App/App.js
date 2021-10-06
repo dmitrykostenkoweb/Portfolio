@@ -23,6 +23,7 @@ import logoScss from "../Assets/projects_icons/sass.svg";
 import logoAxios from "../Assets/projects_icons/axios.svg";
 import logoMaterialUI from "../Assets/projects_icons/material-ui.svg";
 import logoReactSpring from "../Assets/projects_icons/react-spring.svg";
+import logoEmailjs from "../Assets/projects_icons/emailjs.svg";
 
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 
@@ -61,6 +62,7 @@ const App = () => {
         { title: "React", icon: logoReact, id: 1 },
         { title: " Material UI", icon: logoMaterialUI, id: 2 },
         { title: "react-spring", icon: logoReactSpring, id: 3 },
+        { title: "EmailJs", icon: logoEmailjs, id: 4 },
       ],
       herokuLink: "https://kost-mini-twitter.herokuapp.com/",
       githubLink: "https://github.com/dmitrykostenkoweb/twitter",
