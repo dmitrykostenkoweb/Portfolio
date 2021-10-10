@@ -27,36 +27,40 @@
 .MuiLink-root:active {
   color: #f2672e !important;
 }
-.page {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  
-}
-.fade-appear,
-.fade-enter {
-  opacity: 0;
-  z-index: 1;
-}
-.fade-appear-active,
-.fade-enter.fade-enter-active {
-  opacity: 1;
-  transition: opacity 300ms linear 150ms;
-}
 
-.fade-exit {
-  opacity: 1;
-}
-
-.fade-exit.fade-exit-active {
-  opacity: 0;
-  transition: opacity 300ms linear;
-}
-.MuiLink-root{
+.MuiLink-root {
   z-index: 1000;
 }
-.MuiPopover-paper	{
-  border-radius: 24px !important;
+
+
+/* Paper */
+.MuiPaper-root {
+  position: "relative";
   padding: 20px;
+  background: linear-gradient(
+    106.51deg,
+    rgba(255, 255, 255, 0.05) 3.44%,
+    rgba(255, 255, 255, 0.02) 64.82%
+  );
+  backdrop-filter: blur(30px);
+  border-radius: 24px !important;
+  border: 2px solid white;
+  border-image-source: linear-gradient(
+    106.69deg,
+    rgba(255, 255, 255, 0.25) 4.31%,
+    rgba(255, 255, 255, 0) 45.94%,
+    rgba(21, 28, 46, 0) 64.91%,
+    rgba(21, 28, 46, 0.25) 100%
+  );
+}
+
+
+.flexCenter{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.mg-t-40{
+  margin-top: 40px;
 }

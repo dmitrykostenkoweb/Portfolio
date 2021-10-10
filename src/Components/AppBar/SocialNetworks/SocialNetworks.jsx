@@ -9,9 +9,6 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import InstagramIcon from "@material-ui/icons/Instagram";
 
 const useStyles = makeStyles((theme) => ({
-  menuButton: {
-    fontWeight: 700,
-  },
   menuItems: {
     display: "flex",
     flexDirection: "row",
@@ -21,9 +18,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const LetsBeFriends = ({ setFriendsToggle, friendsToggle }) => {
+const SocialNetworks = ({ setFriendsToggle, friendsToggle }) => {
   const classes = useStyles();
-  ///
+
 
   ///let's be friends
   const open = Boolean(friendsToggle);
@@ -38,9 +35,9 @@ const LetsBeFriends = ({ setFriendsToggle, friendsToggle }) => {
   return (
     <Grid item xs={2}>
       <Button
-        className={classes.menuButton}
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
+        style={{ fontWeight: 700 }}
       >
         let's be friends
       </Button>
@@ -82,4 +79,4 @@ const LetsBeFriends = ({ setFriendsToggle, friendsToggle }) => {
   );
 };
 
-export default LetsBeFriends;
+export default SocialNetworks;

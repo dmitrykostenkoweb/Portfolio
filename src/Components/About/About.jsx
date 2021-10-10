@@ -1,26 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import { Grid, Typography, Button, Link } from "@material-ui/core";
-
 import { makeStyles } from "@material-ui/core/styles";
+import FileDownloadIcon from "@mui/icons-material/FileDownload";
 
-import arrow from "../Assets/arrow-right.svg";
-import Dima from "../Assets/background_images/Dima.png";
+import Dima from "../../Assets/background_images/Dima.png";
 
-import GitHubIcon from "@material-ui/icons/GitHub";
+import cv from "../../Assets/Junior-Frontend_Dmitry-Kostenko.pdf";
 
 const useStyles = makeStyles((theme) => ({
-  margin: {
-    marginTop: 40,
-  },
-  wrapper: {
-    padding: 40,
-  },
-
-  text: {
-    fontWeight: 700,
-    fontSize: 36,
-  },
   frontend: {
     fontWeight: 700,
     fontSize: 36,
@@ -31,7 +19,6 @@ const useStyles = makeStyles((theme) => ({
   },
   developer: {
     fontWeight: 700,
-    fontSize: 36,
     background: "linear-gradient(90deg, #8B5CF6 0%, #EC4899 43.9%)",
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
@@ -42,42 +29,14 @@ const useStyles = makeStyles((theme) => ({
 const About = ({ matches }) => {
   const classes = useStyles();
 
-  const [offsetY, setOffsetY] = useState(0);
-  const handelScroll = () => {
-    setOffsetY(window.pageYOffset);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handelScroll);
-    return () => window.removeEventListener("scroll", handelScroll);
-  }, []);
-
-  let coefficient = 0.3;
-
   return (
-    <Grid
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-      item
-      xs={12}
-    >
-      <Grid
-        style={{
-          transform: `translateY(${offsetY * coefficient}px)`,
-        }}
-        className={classes.wrapper}
-        item
-        xs={12}
-        sm={12}
-        md={6}
-        lg={6}
-      >
+    <Grid className="flexCenter" item xs={12}>
+      <Grid style={{ padding: 40 }} item xs={12} sm={12} md={6} lg={6}>
         <Typography
-          style={matches ? { fontSize: 36 } : { fontSize: 18 }}
+          style={{
+            fontSize: matches ? 36 : 18,
+            fontWeight: 700,
+          }}
           align="left"
           className={classes.text}
         >
@@ -85,35 +44,26 @@ const About = ({ matches }) => {
         </Typography>
         <div style={{ display: "flex", flexWrap: "wrap" }}>
           <span
-            style={matches ? { fontSize: 36 } : { fontSize: 18 }}
+            style={{ fontSize: matches ? 36 : 18 }}
             className={classes.frontend}
           >
             Frontend
           </span>
           <span
-            style={matches ? { fontSize: 36 } : { fontSize: 18 }}
+            style={{ fontSize: matches ? 36 : 18 }}
             className={classes.developer}
           >
             Developer
           </span>
         </div>
-        <Typography className={classes.margin}>
+        <Typography style={{ marginTop: 40 }}>
           I am very passionate about interface development while taking into
           consideration the latest trends and technologies.
         </Typography>
-        <Link
-        underline="none"
-          rel="stylesheet"
-          href="https://github.com/dmitrykostenkoweb"
-          target="_blank"
-        >
-          <Button
-            className={classes.margin}
-            color="primary"
-            variant="contained"
-          >
-            My GitHub <GitHubIcon style={{ margin: "0 10px " }} />
-            <img src={arrow} alt="arrow" />
+
+        <Link download href={cv} underline="none">
+          <Button style={{ marginTop: 40 }} color="primary" variant="contained">
+            Download my CV <FileDownloadIcon style={{ margin: "0 10px " }} />
           </Button>
         </Link>
       </Grid>

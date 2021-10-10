@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import LetsBeFriends from "./letsBeFriends";
-import Nav from "./nav";
-import Theme from "./theme";
+import SocialNetworks from "./SocialNetworks/SocialNetworks";
+import Nav from "./Nav/Nav";
+import ModeBtn from "./ModeBtn/ModeBtn";
 
 import { Popover, Button, Grid, Link, Box } from "@material-ui/core";
 
@@ -98,7 +98,7 @@ const MyAppBar = ({
   const appBarContent = () => {
     return (
       <Grid className={classes.container} container>
-        <LetsBeFriends
+        <SocialNetworks
           friendsToggle={friendsToggle}
           setFriendsToggle={setFriendsToggle}
         />
@@ -108,7 +108,7 @@ const MyAppBar = ({
           value={value}
           setValue={setValue}
         />
-        <Theme darkMode={darkMode} setDarkMode={setDarkMode} />
+        <ModeBtn darkMode={darkMode} setDarkMode={setDarkMode} />
       </Grid>
     );
   };
@@ -140,7 +140,7 @@ const MyAppBar = ({
           >
             <Box className={classes.menuItems}>{appBarContentMobile}</Box>
           </Popover>
-          <Theme darkMode={darkMode} setDarkMode={setDarkMode} />
+          <ModeBtn darkMode={darkMode} setDarkMode={setDarkMode} />
         </Grid>
       ) : (
         <Box className={classes.menuItems}>{appBarContent}</Box>

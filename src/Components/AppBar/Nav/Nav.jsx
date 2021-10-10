@@ -11,13 +11,18 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-around",
     gap: 20,
     alignItems: "center",
-    zIndex: 100,
   },
 }));
 
-const Nav = ({ darkMode, value, setValue, matches }) => {
+const Nav = ({ darkMode, matches }) => {
   const classes = useStyles();
-  console.log(matches);
+
+  const activeNavStyles = {
+    fontWeight: "bold",
+    background: "linear-gradient(90deg, #8B5CF6 0%, #EC4899 43.9%)",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+  };
   return (
     <Grid
       className={classes.nav}
@@ -35,12 +40,7 @@ const Nav = ({ darkMode, value, setValue, matches }) => {
         exact
         to="/"
         underline="none"
-        activeStyle={{
-          fontWeight: "bold",
-          background: "linear-gradient(90deg, #8B5CF6 0%, #EC4899 43.9%)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-        }}
+        activeStyle={activeNavStyles}
       >
         About
       </Link>
@@ -50,12 +50,7 @@ const Nav = ({ darkMode, value, setValue, matches }) => {
         exact
         to="/portfolio"
         underline="none"
-        activeStyle={{
-          fontWeight: "bold",
-          background: "linear-gradient(90deg, #F59E0B 39.95%, #EF4444 77.15%)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-        }}
+        activeStyle={activeNavStyles}
       >
         Portfolio
       </Link>
@@ -64,12 +59,7 @@ const Nav = ({ darkMode, value, setValue, matches }) => {
         component={RouterLink}
         to="/contact"
         underline="none"
-        activeStyle={{
-          fontWeight: "bold",
-          background: "linear-gradient(90deg, #8B5CF6 0%, #EC4899 43.9%)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-        }}
+        activeStyle={activeNavStyles}
       >
         Contact
       </Link>

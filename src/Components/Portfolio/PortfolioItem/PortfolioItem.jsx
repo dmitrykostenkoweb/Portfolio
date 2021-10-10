@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   Grid,
   Typography,
@@ -6,13 +6,11 @@ import {
   Box,
   Button,
   Divider,
-  BottomNavigation,
-  BottomNavigationAction,
 } from "@material-ui/core/";
 
 import { makeStyles } from "@material-ui/core/styles";
 
-import laptopImg from "../Assets/background_images/laptop.png";
+import Services from "../../../Services/Services";
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -22,45 +20,14 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: "90%",
     borderRadius: theme.shape.borderRadius,
   },
-  nav: {
-    display: "flex",
-    justifyContent: "space-around",
-    alignItems: "center",
-  },
 }));
 
-const Portfolio = ({
-  itemProject,
-  projectsData,
-  value,
-  setValue,
-  darkMode,
-  matches,
-}) => {
+const PortfolioItem = ({ matches, navValue }) => {
   const classes = useStyles();
-  const [offsetY, setOffsetY] = useState(0);
-  const handelScroll = () => {
-    setOffsetY(window.pageYOffset);
-  };
 
-  useEffect(() => {
-    window.addEventListener("scroll", handelScroll);
-    return () => window.removeEventListener("scroll", handelScroll);
-  }, []);
+  const resources = new Services();
 
-  const navigation = projectsData.map((item) => {
-    const { title, id } = item;
-
-    return (
-      <BottomNavigationAction
-        label={title}
-        key={id}
-        style={{ color: darkMode ? "#fff" : "#000", fontWeight: 600 }}
-      />
-    );
-  });
-
-  const element = itemProject.map((item) => {
+  const element = resources.getPortfolioList(navValue).map((item) => {
     const {
       img,
       title,
@@ -71,7 +38,7 @@ const Portfolio = ({
       order,
       id,
     } = item;
-
+    //technologies
     const tech = technologies.map((item) => {
       const { title, icon, id } = item;
       return (
@@ -81,15 +48,13 @@ const Portfolio = ({
         </Box>
       );
     });
-
+    //
     return (
       <Grid
         style={{
-          // transform: `translateY(${offsetY * coefficient}px)`,
-          marginTop: 50,
+          marginTop: 40,
         }}
-        item
-        xs={12}
+        container
         key={id}
       >
         <Grid item xs={12}>
@@ -221,62 +186,7 @@ const Portfolio = ({
       </Grid>
     );
   });
-
-  return (
-    <div style={matches ? { padding: 40 } : { padding: 10 }}>
-      <Grid style={{ display: "flex" }} container>
-        <Grid xs={12} sm={12} md={6} lg={6} item>
-          <Typography
-            style={
-              matches
-                ? { fontSize: 36, fontWeight: 700 }
-                : { fontSize: 18, fontWeight: 700 }
-            }
-            align="left"
-            variant="h6"
-          >
-            Here are few of my applications. You can find more on my github
-            profile.
-          </Typography>
-        </Grid>
-        <Grid
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            transform: `translateY(${offsetY * 0.1}px)`,
-          }}
-          xs={12}
-          sm={12}
-          md={6}
-          lg={6}
-          item
-        >
-          <img src={laptopImg} style={{ width: "50%" }} alt="img" />
-        </Grid>
-      </Grid>
-
-      <Grid style={{ marginTop: "5vh" }} item>
-        <BottomNavigation
-          className={classes.nav}
-          showLabels
-          value={value}
-          onChange={(event, newValue) => {
-            setValue(newValue);
-          }}
-          style={
-            matches ? { flexDirection: "row" } : { flexDirection: "column" }
-          }
-        >
-          {navigation}
-        </BottomNavigation>
-      </Grid>
-
-      <Grid spacing={5} container>
-        {element}
-      </Grid>
-    </div>
-  );
+  return <>{element}</>;
 };
 
-export default Portfolio;
+export default PortfolioItem;
