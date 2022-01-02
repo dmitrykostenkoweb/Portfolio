@@ -5,7 +5,7 @@ import { Grid, Typography, Divider } from "@material-ui/core/";
 import Feedback from "./Feedback/Feedback";
 import ContactBtns from "./ContactBtns/ContactBtns";
 
-import Gmail from "../../Assets/background_images/Gmail.png";
+import Gmail from "../../Assets/background_images/laptop.png";
 
 const Contact = ({
   darkMode,
@@ -28,7 +28,8 @@ const Contact = ({
             align="left"
             variant="h6"
           >
-            Hey! I am open to job offers and I will answer as soon as possible.
+            Hey! Here you can send me an email and I will answer as soon as
+            possible.
           </Typography>
         </Grid>
         <Grid

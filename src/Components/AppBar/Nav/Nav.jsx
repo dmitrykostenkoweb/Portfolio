@@ -44,7 +44,7 @@ const Nav = ({ darkMode, matches }) => {
       >
         About
       </Link>
-      <Link
+      {/* <Link
         style={darkMode ? { color: "#fff" } : { color: "#000" }}
         component={RouterLink}
         exact
@@ -53,7 +53,7 @@ const Nav = ({ darkMode, matches }) => {
         activeStyle={activeNavStyles}
       >
         Portfolio
-      </Link>
+      </Link> */}
       <Link
         style={darkMode ? { color: "#fff" } : { color: "#000" }}
         component={RouterLink}

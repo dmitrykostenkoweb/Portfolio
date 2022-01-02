@@ -56,16 +56,35 @@ const About = ({ matches }) => {
             Developer
           </span>
         </div>
-        <Typography style={{ marginTop: 40 }}>
+        <Typography style={{ marginTop: 10 }}>
           I am very passionate about interface development while taking into
           consideration the latest trends and technologies.
         </Typography>
+        <div
+          style={{
+            marginTop: 10,
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 5,
+            alignItems: "center",
+          }}
+        >
+          <Typography>Now I work as a junior developer in</Typography>
+          <Link
+            style={{ fontSize: 16 }}
+            target="_blank"
+            href="https://pixeltechnology.com/"
+          >
+            Pixel Technology
+          </Link>
+          <Typography>.</Typography>
+        </div>
 
-        <Link download href={cv} underline="none">
+        {/* <Link download href={cv} underline="none">
           <Button style={{ marginTop: 40 }} color="primary" variant="contained">
             Download my CV <FileDownloadIcon style={{ margin: "0 10px " }} />
           </Button>
-        </Link>
+        </Link> */}
       </Grid>
       <Grid
         style={{
