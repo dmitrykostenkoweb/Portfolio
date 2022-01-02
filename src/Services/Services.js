@@ -1,6 +1,7 @@
 import miniTweeter from "../Assets/miniTweeter.jpg";
 import toDo from "../Assets/toDo.jpg";
 import portfolio from "../Assets/portfolio.jpg";
+import movieApp from "../Assets/movie-app.jpg";
 
 import logoReact from "../Assets/projects_icons/react.svg";
 import logoReactstrap from "../Assets/projects_icons/reactstrap.svg";
@@ -12,8 +13,24 @@ import logoAxios from "../Assets/projects_icons/axios.svg";
 import logoMaterialUI from "../Assets/projects_icons/material-ui.svg";
 import logoReactSpring from "../Assets/projects_icons/react-spring.svg";
 import logoEmailjs from "../Assets/projects_icons/emailjs.svg";
+import logoNuxt from '../Assets/projects_icons/nuxt.svg'
 
 const projectsData = [
+  {
+    img: movieApp,
+    title: "Movie App",
+    description: "Application that shows the latest movies",
+    technologies: [
+      { title: "NuxtJs", icon: logoNuxt, id: 1 },
+      { title: " Material UI", icon: logoMaterialUI, id: 2 },
+      { title: "react-spring", icon: logoReactSpring, id: 3 },
+      { title: "EmailJs", icon: logoEmailjs, id: 4 },
+    ],
+    herokuLink: "https://dmitrykostenko.herokuapp.com/",
+    githubLink: "https://github.com/dmitrykostenkoweb/Portfolio",
+    order: 1,
+    id: 0,
+  },
   {
     img: portfolio,
     title: "My portfolio site",
@@ -27,7 +44,7 @@ const projectsData = [
     herokuLink: "https://dmitrykostenko.herokuapp.com/",
     githubLink: "https://github.com/dmitrykostenkoweb/Portfolio",
     order: -1,
-    id: 0,
+    id: 1,
   },
   {
     img: toDo,
@@ -43,7 +60,7 @@ const projectsData = [
     herokuLink: "https://kost-todo.herokuapp.com",
     githubLink: "https://github.com/dmitrykostenkoweb/toDo",
     order: 1,
-    id: 1,
+    id: 2,
   },
   {
     img: miniTweeter,
@@ -59,7 +76,7 @@ const projectsData = [
     herokuLink: "https://kost-mini-twitter.herokuapp.com/",
     githubLink: "https://github.com/dmitrykostenkoweb/twitter",
     order: -1,
-    id: 2,
+    id: 3,
   },
 ];
 
