@@ -2,20 +2,20 @@ import React from "react";
 
 import { NavLink as RouterLink } from "react-router-dom";
 
-import { Grid, Link } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { Grid, Link } from "@mui/material";
+// import { makeStyles } from "@mui/material/styles";
 
-const useStyles = makeStyles((theme) => ({
-  nav: {
-    display: "flex",
-    justifyContent: "space-around",
-    gap: 20,
-    alignItems: "center",
-  },
-}));
+// const useStyles = makeStyles(() => ({
+//   nav: {
+//     display: "flex",
+//     justifyContent: "space-around",
+//     gap: 20,
+//     alignItems: "center",
+//   },
+// }));
 
 const Nav = ({ darkMode, matches }) => {
-  const classes = useStyles();
+  // const classes = useStyles();
 
   const activeNavStyles = {
     fontWeight: "bold",
@@ -25,7 +25,7 @@ const Nav = ({ darkMode, matches }) => {
   };
   return (
     <Grid
-      className={classes.nav}
+      className='nav'
       style={
         !matches
           ? { flexDirection: "column", marginTop: 20 }

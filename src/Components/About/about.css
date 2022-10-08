@@ -1,0 +1,15 @@
+.frontend {
+    font-weight: 700;
+    font-size: 36px;
+    background: linear-gradient(90deg, #F59E0B 39.95%, #EF4444 77.15%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0 4px
+}
+.developer {
+    font-weight: 700;
+    background: linear-gradient(90deg, #8B5CF6 0%, #EC4899 43.9%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0 4px
+}

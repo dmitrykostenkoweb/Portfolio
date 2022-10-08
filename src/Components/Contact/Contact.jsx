@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Grid, Typography, Divider } from "@material-ui/core/";
+import { Grid, Typography, Divider } from "@mui/material/";
 
 import Feedback from "./Feedback/Feedback";
 import ContactBtns from "./ContactBtns/ContactBtns";

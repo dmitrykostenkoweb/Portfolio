@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-import { Switch, Route } from "react-router-dom";
+import { Route, Routes } from "react-router";
+
 
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
@@ -11,7 +12,7 @@ import Portfolio from "../Portfolio/Portfolio";
 import Contact from "../Contact/Contact";
 import PopUp from "../PopUp/PopUp";
 
-import { Paper, useMediaQuery } from "@material-ui/core/";
+import { Paper, useMediaQuery } from "@mui/material/";
 
 import { useSpring, animated } from "react-spring";
 
@@ -77,7 +78,7 @@ const Content = ({ setDarkMode, darkMode, theme }) => {
                   timeout={300}
                   classNames="fade"
                 >
-                  <Switch 
+                  <Routes 
                   location={location}
                   >
                     <Route exact path="/">
@@ -99,7 +100,7 @@ const Content = ({ setDarkMode, darkMode, theme }) => {
                     <Route path="*">
                       <h2>NotFound</h2>
                     </Route>
-                  </Switch>
+                  </Routes>
                 </CSSTransition>
               </TransitionGroup>
             )}

@@ -1,33 +1,35 @@
 import React from "react";
 
-import { Grid, Typography, Button, Link } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-import FileDownloadIcon from "@mui/icons-material/FileDownload";
+import { Grid, Typography,  Link } from "@mui/material";
+// import { makeStyles } from 'tss-react/mui'
+// import FileDownloadIcon from "@mui/icons-material/FileDownload";
 
 import Dima from "../../Assets/background_images/Dima.png";
 
-import cv from "../../Assets/Junior-Frontend_Dmitry-Kostenko.pdf";
+// import cv from "../../Assets/Junior-Frontend_Dmitry-Kostenko.pdf";
 
-const useStyles = makeStyles((theme) => ({
-  frontend: {
-    fontWeight: 700,
-    fontSize: 36,
-    background: "linear-gradient(90deg, #F59E0B 39.95%, #EF4444 77.15%)",
-    WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
-    margin: "0 4px",
-  },
-  developer: {
-    fontWeight: 700,
-    background: "linear-gradient(90deg, #8B5CF6 0%, #EC4899 43.9%)",
-    WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
-    margin: "0 4px",
-  },
-}));
+import './about.css'
+
+
+// const useStyles = makeStyles((theme) => ({
+//   frontend: {
+//     fontWeight: 700,
+//     fontSize: 36,
+//     background: "linear-gradient(90deg, #F59E0B 39.95%, #EF4444 77.15%)",
+//     WebkitBackgroundClip: "text",
+//     WebkitTextFillColor: "transparent",
+//     margin: "0 4px",
+//   },
+//   developer: {
+//     fontWeight: 700,
+//     background: "linear-gradient(90deg, #8B5CF6 0%, #EC4899 43.9%)",
+//     WebkitBackgroundClip: "text",
+//     WebkitTextFillColor: "transparent",
+//     margin: "0 4px",
+//   },
+// }));
 
 const About = ({ matches }) => {
-  const classes = useStyles();
 
   return (
     <Grid className="flexCenter" item xs={12}>
@@ -38,20 +40,20 @@ const About = ({ matches }) => {
             fontWeight: 700,
           }}
           align="left"
-          className={classes.text}
+          className='text'
         >
           Hey! I am Dmitry Kostenko.
         </Typography>
         <div style={{ display: "flex", flexWrap: "wrap" }}>
           <span
             style={{ fontSize: matches ? 36 : 18 }}
-            className={classes.frontend}
+            className= 'frontend'
           >
             Frontend
           </span>
           <span
             style={{ fontSize: matches ? 36 : 18 }}
-            className={classes.developer}
+            className='developer'
           >
             Developer
           </span>

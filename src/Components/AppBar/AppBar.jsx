@@ -4,33 +4,33 @@ import SocialNetworks from "./SocialNetworks/SocialNetworks";
 import Nav from "./Nav/Nav";
 import ModeBtn from "./ModeBtn/ModeBtn";
 
-import { Popover, Button, Grid, Link, Box } from "@material-ui/core";
+import { Popover, Button, Grid, Link, Box } from "@mui/material";
 
-import { makeStyles } from "@material-ui/core/styles";
-import MenuIcon from "@material-ui/icons/Menu";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import GitHubIcon from "@material-ui/icons/GitHub";
-import InstagramIcon from "@material-ui/icons/Instagram";
+// import { makeStyles } from "@mui/material/styles";
+import MenuIcon from "@mui/icons-material/Menu";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import InstagramIcon from "@mui/icons-material/Instagram";
 
-const useStyles = makeStyles((theme) => ({
-  container: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-
-  menuButton: {
-    fontWeight: 700,
-  },
-  menuItems: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    gap: 20,
-    padding: 10,
-  },
-}));
+// const useStyles = makeStyles(() => ({
+//   container: {
+//     display: "flex",
+//     alignItems: "center",
+//     justifyContent: "center",
+//   },
+//
+//   menuButton: {
+//     fontWeight: 700,
+//   },
+//   menuItems: {
+//     display: "flex",
+//     flexDirection: "row",
+//     justifyContent: "center",
+//     alignItems: "center",
+//     gap: 20,
+//     padding: 10,
+//   },
+// }));
 
 const MyAppBar = ({
   setValue,
@@ -41,7 +41,7 @@ const MyAppBar = ({
   friendsToggle,
   setFriendsToggle,
   }) => {
-  const classes = useStyles();
+  // const classes = useStyles();
 
   /// Burger
   const [anchorElBurger, setAnchorElBurger] = useState(null);
@@ -58,10 +58,10 @@ const MyAppBar = ({
   const appBarContentMobile = () => {
     return (
       <Grid
-        className={classes.container}
+        className='container'
         container
       >
-        <Box className={classes.menuItems} sx={{ p: 2 }}>
+        <Box className='menuItems' sx={{ p: 2 }}>
           <Link
             color="textPrimary"
             href="https://www.linkedin.com/in/dmitry-kostenkoweb/"
@@ -97,7 +97,7 @@ const MyAppBar = ({
   ///
   const appBarContent = () => {
     return (
-      <Grid className={classes.container} container>
+      <Grid className='container' container>
         <SocialNetworks
           friendsToggle={friendsToggle}
           setFriendsToggle={setFriendsToggle}
@@ -118,7 +118,7 @@ const MyAppBar = ({
       {!matches ? (
         <Grid style={{ display: "flex", justifyContent: "space-between" }} item>
           <Button
-            className={classes.menuButton}
+            className='classes'
             aria-describedby={idBurger}
             onClick={handleClickBurger}
           >
@@ -138,12 +138,12 @@ const MyAppBar = ({
               horizontal: "center",
             }}
           >
-            <Box className={classes.menuItems}>{appBarContentMobile}</Box>
+            <Box className='menuItems'>{appBarContentMobile}</Box>
           </Popover>
           <ModeBtn darkMode={darkMode} setDarkMode={setDarkMode} />
         </Grid>
       ) : (
-        <Box className={classes.menuItems}>{appBarContent}</Box>
+        <Box className='classes'>{appBarContent}</Box>
       )}
     </React.Fragment>
   );

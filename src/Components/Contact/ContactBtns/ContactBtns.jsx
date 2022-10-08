@@ -1,9 +1,9 @@
 import React from "react";
-import { Grid, Typography, Link, Button } from "@material-ui/core/";
+import { Grid, Typography, Link, Button } from "@mui/material/";
 
-import MailOutlineIcon from "@material-ui/icons/MailOutline";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import GitHubIcon from "@material-ui/icons/GitHub";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 const ContactBtns = () => {
   return (

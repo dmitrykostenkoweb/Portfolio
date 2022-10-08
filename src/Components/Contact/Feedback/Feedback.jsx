@@ -1,36 +1,36 @@
 import React, { useRef, useState } from "react";
 import emailjs from "emailjs-com";
 
-import { TextField, Grid, Button } from "@material-ui/core/";
+import { TextField, Grid, Button } from "@mui/material/";
 
-import { makeStyles } from "@material-ui/core/styles";
+// import { makeStyles } from "@mui/material/styles";
 
 const Feedback = ({ setOpenPopUp, setPopUpText, setPopUpType, darkMode }) => {
   const [redInput, setRedInput] = useState(false);
-  let color = "black";
-  if (darkMode) {
-    color = "white";
-  }
+  // let color = "black";
+  // if (darkMode) {
+  //   color = "white";
+  // }
+  //
+  // if (redInput) {
+  //   color = "#FF0000";
+  // }
 
-  if (redInput) {
-    color = "#FF0000";
-  }
+  // const useStyles = makeStyles(() => ({
+  //   notchedOutline: {
+  //     borderColor: color,
+  //     boxShadow: redInput && `-3px 3px 10px ${color}`,
+  //   },
+  //   cssLabel: {
+  //     color: color,
+  //   },
+  //   text: {
+  //     fontWeight: 700,
+  //     fontSize: 36,
+  //   },
+  // }));
 
-  const useStyles = makeStyles((theme) => ({
-    notchedOutline: {
-      borderColor: color,
-      boxShadow: redInput && `-3px 3px 10px ${color}`,
-    },
-    cssLabel: {
-      color: color,
-    },
-    text: {
-      fontWeight: 700,
-      fontSize: 36,
-    },
-  }));
-
-  const classes = useStyles();
+  // const classes = useStyles();
   const [inputNameValue, setInputNameValue] = useState("");
   const [inputEmailValue, setInputEmailValue] = useState("");
   const [inputMassValue, setInputMassValue] = useState("");
@@ -46,7 +46,7 @@ const Feedback = ({ setOpenPopUp, setPopUpText, setPopUpType, darkMode }) => {
         "user_Rz7a2KDLB1PzB3FzMnGmy"
       )
       .then(
-        (result) => {
+        () => {
           if (!inputNameValue || !inputEmailValue || !inputMassValue) {
             setRedInput(true);
             setOpenPopUp(true);
@@ -103,14 +103,14 @@ const Feedback = ({ setOpenPopUp, setPopUpText, setPopUpType, darkMode }) => {
           noValidate
           autoComplete="off"
           InputLabelProps={{
-            classes: {
-              root: classes.cssLabel,
-            },
+            // classes: {
+            //   root: classes.cssLabel,
+            // },
           }}
           InputProps={{
-            classes: {
-              notchedOutline: classes.notchedOutline,
-            },
+            // classes: {
+            //   notchedOutline: classes.notchedOutline,
+            // },
           }}
           style={{ width: "100%", maxWidth: 300 }}
           type="text"
@@ -127,14 +127,14 @@ const Feedback = ({ setOpenPopUp, setPopUpText, setPopUpType, darkMode }) => {
           variant="outlined"
           noValidate
           InputLabelProps={{
-            classes: {
-              root: classes.cssLabel,
-            },
+            // classes: {
+            //   root: classes.cssLabel,
+            // },
           }}
           InputProps={{
-            classes: {
-              notchedOutline: classes.notchedOutline,
-            },
+            // classes: {
+            //   notchedOutline: classes.notchedOutline,
+            // },
           }}
           style={{ width: "100%", maxWidth: 300 }}
           type="email"
@@ -151,14 +151,14 @@ const Feedback = ({ setOpenPopUp, setPopUpText, setPopUpType, darkMode }) => {
           noValidate
           autoComplete="off"
           InputLabelProps={{
-            classes: {
-              root: classes.cssLabel,
-            },
+            // classes: {
+            //   root: classes.cssLabel,
+            // },
           }}
           InputProps={{
-            classes: {
-              notchedOutline: classes.notchedOutline,
-            },
+            // classes: {
+            //   notchedOutline: classes.notchedOutline,
+            // },
           }}
           style={{ width: "100%", maxWidth: 300, paddingBottom: 0 }}
           type="text"

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b74132da-f614-44ef-a005-1646e94c440d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/About/about.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/About/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/About/About.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/AppBar/AppBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/AppBar/AppBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/AppBar/ModeBtn/ModeBtn.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/AppBar/ModeBtn/ModeBtn.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/AppBar/Nav/Nav.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/AppBar/Nav/Nav.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/AppBar/SocialNetworks/SocialNetworks.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/AppBar/SocialNetworks/SocialNetworks.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Background.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Background.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Contact/Contact.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Contact/Contact.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Contact/ContactBtns/ContactBtns.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Contact/ContactBtns/ContactBtns.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Contact/Feedback/Feedback.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Contact/Feedback/Feedback.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/Content.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/Content.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Parallax.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Parallax.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/PopUp/PopUp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PopUp/PopUp.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Portfolio/Portfolio.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Portfolio/Portfolio.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Portfolio/PortfolioItem/PortfolioItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Portfolio/PortfolioItem/PortfolioItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Portfolio/PortfolioNav/PortfolioNav.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Portfolio/PortfolioNav/PortfolioNav.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="28c3gByLxuJHwErcExQsPDycNit" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Professional\Desktop\my pet projects\REACT-MATERIAL-UI__my portfolio site\my-portfolio-app\src\Assets" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Professional\Desktop\my pet projects\REACT-MATERIAL-UI__my portfolio site\my-portfolio-app\src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b74132da-f614-44ef-a005-1646e94c440d" name="Changes" comment="" />
+      <created>1651502155307</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1651502155307</updated>
+      <workItem from="1651502157175" duration="1102000" />
+      <workItem from="1651503291498" duration="67000" />
+      <workItem from="1651503375212" duration="4185000" />
+      <workItem from="1661709024405" duration="1568000" />
+      <workItem from="1661891160204" duration="1706000" />
+      <workItem from="1662144826056" duration="8000" />
+      <workItem from="1663880828443" duration="820000" />
+      <workItem from="1663926796414" duration="2085000" />
+      <workItem from="1664043544457" duration="1712000" />
+      <workItem from="1665256098737" duration="143000" />
+      <workItem from="1665256261457" duration="6425000" />
+      <workItem from="1665263639353" duration="59000" />
+      <workItem from="1665263700200" duration="367000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

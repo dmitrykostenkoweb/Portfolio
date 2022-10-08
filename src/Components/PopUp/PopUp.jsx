@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react";
 
-import { Snackbar, IconButton } from "@material-ui/core/";
+import { Snackbar, IconButton } from "@mui/material/";
 import CloseIcon from "@mui/icons-material/Close";
 import MuiAlert from "@mui/material/Alert";
 

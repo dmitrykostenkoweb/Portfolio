@@ -1,12 +1,10 @@
 import React, { useState } from "react";
+import { CssBaseline, Grid, Container } from  '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-import { CssBaseline, Grid, Container } from "@material-ui/core/";
 
-import { createTheme, ThemeProvider } from "@material-ui/core/styles";
-
-import Background from "../Components/Background";
-import Content from "../Components/Content/Content";
-
+import Background from "./Components/Background";
+import Content from "./Components/Content/Content";
 const App = () => {
   const [darkMode, setDarkMode] = useState(true);
 
@@ -14,8 +12,7 @@ const App = () => {
   const theme = createTheme({
     //COLORS
     palette: {
-      common: !darkMode ? "#fff" : "#000",
-
+      common: darkMode ? "#fff" : "#000",
       primary: {
         main: "#F2672E",
       },
@@ -29,7 +26,7 @@ const App = () => {
     },
     //FONT
     typography: {
-      fontFamily: " 'Poppins', sans-serif;",
+      fontFamily: " 'Poppins', sans-serif",
     },
   });
 

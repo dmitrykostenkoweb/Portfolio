@@ -6,24 +6,24 @@ import {
   Box,
   Button,
   Divider,
-} from "@material-ui/core/";
+} from "@mui/material/";
 
-import { makeStyles } from "@material-ui/core/styles";
+// import { makeStyles } from "@mui/material/styles";
 
 import Services from "../../../Services/Services";
 
-const useStyles = makeStyles((theme) => ({
-  title: {
-    margin: theme.spacing(4, 0, 0),
-  },
-  projectImg: {
-    maxWidth: "90%",
-    borderRadius: theme.shape.borderRadius,
-  },
-}));
+// const useStyles = makeStyles((theme) => ({
+//   title: {
+//     margin: theme.spacing(4, 0, 0),
+//   },
+//   projectImg: {
+//     maxWidth: "90%",
+//     borderRadius: theme.shape.borderRadius,
+//   },
+// }));
 
 const PortfolioItem = ({ matches, navValue }) => {
-  const classes = useStyles();
+  // const classes = useStyles();
 
   const resources = new Services();
 
@@ -100,7 +100,7 @@ const PortfolioItem = ({ matches, navValue }) => {
                 rel="noreferrer"
                 style={{ width: "100%", height: "100%" }}
               >
-                <img className={classes.projectImg} src={img} alt="img" />
+                <img className='projectImg' src={img} alt="img" />
               </Link>
             </Grid>
 
@@ -119,7 +119,7 @@ const PortfolioItem = ({ matches, navValue }) => {
               md={6}
               lg={6}
             >
-              <Typography variant="h6" className={classes.title}>
+              <Typography variant="h6" className='title'>
                 Technologies:
               </Typography>
               <Box

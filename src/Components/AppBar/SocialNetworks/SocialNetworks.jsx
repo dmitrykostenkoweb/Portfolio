@@ -1,25 +1,25 @@
 import React from "react";
 
-import { Button, Grid, Link, Box, Popover } from "@material-ui/core";
+import { Button, Grid, Link, Box, Popover } from "@mui/material";
 
-import { makeStyles } from "@material-ui/core/styles";
+// import { makeStyles } from "@mui/material/styles";
 
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import GitHubIcon from "@material-ui/icons/GitHub";
-import InstagramIcon from "@material-ui/icons/Instagram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import InstagramIcon from "@mui/icons-material/Instagram";
 
-const useStyles = makeStyles((theme) => ({
-  menuItems: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-around",
-    alignItems: "center",
-    gap: 20,
-  },
-}));
+// const useStyles = makeStyles(() => ({
+//   menuItems: {
+//     display: "flex",
+//     flexDirection: "row",
+//     justifyContent: "space-around",
+//     alignItems: "center",
+//     gap: 20,
+//   },
+// }));
 
 const SocialNetworks = ({ setFriendsToggle, friendsToggle }) => {
-  const classes = useStyles();
+  // const classes = useStyles();
 
 
   ///let's be friends
@@ -39,7 +39,7 @@ const SocialNetworks = ({ setFriendsToggle, friendsToggle }) => {
         onClick={handleClick}
         style={{ fontWeight: 700 }}
       >
-        let's be friends
+        lets be friends
       </Button>
 
       <Popover
@@ -51,7 +51,7 @@ const SocialNetworks = ({ setFriendsToggle, friendsToggle }) => {
           horizontal: "left",
         }}
       >
-        <Box className={classes.menuItems}>
+        <Box className='menuItems'>
           <Link
             color="textPrimary"
             href="https://www.linkedin.com/in/dmitry-kostenkoweb/"

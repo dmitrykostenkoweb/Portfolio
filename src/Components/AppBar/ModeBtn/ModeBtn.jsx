@@ -2,7 +2,7 @@ import React from "react";
 
 import moon from "../../../Assets/moon.svg";
 import sun from "../../../Assets/sun.svg";
-import { Button, Grid } from "@material-ui/core";
+import { Button, Grid } from "@mui/material";
 
 const ModeBtn = ({ darkMode, setDarkMode }) => {
   return (

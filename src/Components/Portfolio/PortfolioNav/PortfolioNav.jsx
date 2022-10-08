@@ -1,6 +1,6 @@
 import React from "react";
 
-import { BottomNavigation, BottomNavigationAction } from "@material-ui/core/";
+import { BottomNavigation, BottomNavigationAction } from "@mui/material/";
 
 import Services from "../../../Services/Services";
 
